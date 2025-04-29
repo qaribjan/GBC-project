@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* here we can add custome css  */
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {  
+  width: 100%;
+}
+ 
+ body{
+
+  font-optical-sizing: auto;
+ }
