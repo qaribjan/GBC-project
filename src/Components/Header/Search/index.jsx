@@ -4,11 +4,11 @@ import { IoSearch } from "react-icons/io5";
 
 function Search() {
   return (
-    <div className='serchbox relative w-full h-[50px] bg-[#e5e5e5] rounded-[5px]'>
+    <div className='serchbox relative w-full h-[40px] bg-[#e5e5e5] rounded-[5px]'>
       <input
         type="text"
         placeholder="Search for Products.."
-        className="w-full h-[50px] border-none focus:outline-none p-2 pr-12 text-[15px]"
+        className="w-full h-[40px] border-none focus:outline-none py-2 px-2 text-[15px]"
       />
       
       <Button
