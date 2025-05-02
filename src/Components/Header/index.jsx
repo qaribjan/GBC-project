@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { FaEnvelope } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
 import Navigation from './Header/Navigation';
-import Hero from './Hero';
+import Category from './Category';
 
 function Header() {
   return (
@@ -47,9 +47,7 @@ function Header() {
     {/* *********************************************************** */}
     {/* navigation start here */}
       <Navigation/>
-      <div>
-        <Hero/>
-      </div>
+     
     </header>
   )
 }
