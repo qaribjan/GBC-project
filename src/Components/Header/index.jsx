@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { FaEnvelope } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
 import Navigation from './Header/Navigation';
-import Category from './Category';
+// import Category from './Category';
 
 function Header() {
   return (
