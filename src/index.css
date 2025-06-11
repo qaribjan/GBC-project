@@ -16,7 +16,13 @@
   margin: auto;
 
 }
- 
+#root > div:nth-child(2) > div > footer > div > div.container.flex.py-8 > div.part3.w-\[35\%\].flex.pl-8.flex-col.pr-8 > form > label > span.MuiTypography-root.MuiTypography-body1.MuiFormControlLabel-label.css-rizt0-MuiTypography-root{
+  font-size: 13px;
+}
+
+  footer form input::placeholder{
+    font-size: 14px;
+  }
  body{
   
   font-optical-sizing: auto;

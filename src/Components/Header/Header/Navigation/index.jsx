@@ -5,44 +5,43 @@ import { RiArrowDownWideFill } from "react-icons/ri";
 import Category from '../../Category';
 
 function Navigation() {
-  const [isOpen, setOpen] = useState(false); // Initial state is false
+  const [isOpen, setOpen] = useState(false);
 
-  const openPanel = () => {
-    setOpen(true); // Set state to true to open the panel
-  };
-
-  const closePanel = () => {
-    setOpen(false); // Set state to false to close the panel
-  };
+  const openPanel = () => setOpen(true);
+  const closePanel = () => setOpen(false);
 
   return (
     <>
-      <nav className="border-b-[2px] border-gray-100">
-        <div className="flex items-center justify-between py-2">
+      <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+        <div className="max-w-screen-xl mx-auto flex items-center justify-between px-8 py-3">
+
           {/* LEFT – Shop By Categories */}
-          <div className="ml-10">
-            <Button className="!text-black !font-bold" onClick={openPanel}>
-              <CgMenuLeftAlt className="text-2xl" />
+          <div>
+            <button
+              onClick={openPanel}
+              className="flex items-center gap-2 text-gray-800 font-semibold text-md"
+            >
+              <CgMenuLeftAlt className="text-xl" />
               Shop By Categories
-              <RiArrowDownWideFill className="text-[16px]" />
-            </Button>
+              <RiArrowDownWideFill className="text-base" />
+            </button>
           </div>
+
           {/* RIGHT – Menu List */}
-          <div className="mr-8">
-            <ul className="flex items-center justify-between gap-4">
-              <li className="list-none cursor-pointer hover:text-gray-400 text-[14px] font-[500]">
-                Home
-              </li>
-              <li className="list-none cursor-pointer hover:text-gray-400 text-[14px] font-[500]">
+          <ul className="flex items-center gap-8">
+            <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">
+              Home
+            </li>
+            <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">
               Tender Submitting
-              </li>
-              <li className="list-none cursor-pointer hover:text-gray-400 text-[14px] font-[500]">
-                Buyer/Seller Central
-              </li>
-            </ul>
-          </div>
+            </li>
+            <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">
+              Buyer/Seller Central
+            </li>
+          </ul>
         </div>
       </nav>
+
       <Category openpnal={closePanel} isopen={isOpen} />
     </>
   );

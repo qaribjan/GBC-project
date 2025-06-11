@@ -1,68 +1,89 @@
 import React from 'react';
+
+import Slider from './Slider';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 import { Navigation, Autoplay } from 'swiper/modules';
-import Slider from './Slider';
+
 function Home() {
   return (
     <>
-    <div className="bg-[#f5f0f0]">
-      <div className="py-4 px-2 md:px-6 bg-[#f5f0f0]">
-        <Swiper
-          navigation={true}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          loop={true}
-          modules={[Navigation, Autoplay]}
-          className="mySwiper"
-          style={{ height: '370px' }} 
-        >
-          <SwiperSlide>
-            <div className="w-full h-full">
-              <img
-                src="https://img.freepik.com/free-psd/black-friday-super-sale-facebook-cover-template_120329-2298.jpg"
-                className="w-full h-full object-fill rounded-[20px]"
-                alt="Sale"
-              />
-            </div>
-          </SwiperSlide>
+      <div style={{ padding: '30px' }}>
+        <div className="flex  gap-4">
+          {/* Left side: Swiper Carousel */}
+          <div className="w-[70%] h-[55%]">
+            <Swiper
+              loop={true}
+              spaceBetween={30}
+              navigation={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              speed={1000}
+              modules={[Navigation, Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img
+                  src="https://tiimg.tistatic.com/new_website1/design2024/images/gd-desktop.jpeg"
+                  className="rounded-xl"
+                  alt="slide1"
+                  style={{
+                    maxHeight: '300px',
+                    width: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="https://img.tradeindia.com/new_website1/design2025/images/asia-premier-large.jpeg"
+                  className="rounded-xl"
+                  alt="slide2"
+                  style={{
+                    maxHeight: '300px',
+                    width: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
 
-          <SwiperSlide>
-            <div className="w-full h-full">
-              <img
-                src="https://img.freepik.com/free-vector/realistic-sale-banner-template_23-2148958390.jpg"
-                className="w-full h-full object-fill rounded-[20px]"
-                alt="Sale"
-              />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="w-full h-full">
-              <img
-                src="https://img.freepik.com/free-vector/gradient-sale-banner-template_23-2148897325.jpg"
-                className="w-full h-full object-fill rounded-[20px]"
-                alt="Sale"
-              />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="w-full h-full">
-              <img
-                src="https://img.freepik.com/free-psd/fashion-sale-social-media-template_505751-2960.jpg"
-                className="w-full h-full object-fill rounded-[20px]"
-                alt="Sale"
-              />
-            </div>
-          </SwiperSlide>
-        </Swiper>
+          {/* Right side: Animated stacked images */}
+          <div className="w-[40%] flex flex-col gap-4 justify-center animate-fade-in">
+            <img
+              src="https://int2.chinacdnb2b.com/domains/tradekey.com/lang/en/images/v2/Explore-New-Business-Opportunities.webp"
+              alt="business"
+              className="rounded-xl shadow-lg"
+              style={{
+                maxHeight: '140px',
+                width: '100%',
+                objectFit: 'cover',
+              }}
+            />
+            <img
+              src="https://int2.chinacdnb2b.com/domains/tradekey.com/lang/en/images/v2/email_marketing.webp"
+              alt="email"
+              className="rounded-xl shadow-lg"
+              style={{
+                maxHeight: '140px',
+                width: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </div>
+        </div>
       </div>
-      <Slider/>
-    </div>
-   
+
+      <div>
+        <Slider />
+      </div>
     </>
   );
 }
-  
+
 export default Home;

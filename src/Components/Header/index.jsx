@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import { FaEnvelope } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
 import Navigation from './Header/Navigation';
+import { FaRegCircleUser } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 // import Category from './Category';
 
 function Header() {
@@ -26,19 +28,21 @@ function Header() {
     <div className="container  flex items-center justify-between ">
       <div className="col1 w-[25%]">
            {/* here our logo we set it here */}
-            <h1 className='text-2xl font-[500] px-7 '>GlobleBidChain </h1>
+            <h1 className='text-2xl  px-7 font-[600] text-[#fa5252]'>GlobleBidChain </h1>
       </div>
         <div className="col2 w-[40%] ">
             < Search />
         </div>
-           <div className="col3 w-[25%] flex  items-center justify-between ">
+           <div className="col3 w-[25%] flex  items-center justify-between  ">
             <div>
-              <Button className='  !text-black  !font-[550]'>Login</Button>
-              <Button className='!text-black  !font-[550]'>Register</Button>
+              {/* <Link className='!font-[550] !text-[#fa5252]'>Login</Link> */}
+              <Link to="/login" className='!font-[550] !text-[#fa5252]'>Login</Link>
+
+              <Button className='!text-[#fa5252] !font-[550]'>Register</Button>
             </div>
                <div>
-              <Button>< FaEnvelope className='text-[18px]  !text-black ' /></Button>
-              <Button><  IoNotifications className='text-[19px] !text-black' /></Button>
+              <Button>< FaEnvelope className='text-[19px]  !text-[#fa5252]'/></Button>
+              <Button><  IoNotifications className='text-[19px] !text-[#fa5252]' /></Button>
                </div>
       </div>
     </div>
