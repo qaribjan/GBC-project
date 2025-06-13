@@ -8,7 +8,6 @@ import Navigation from './Header/Navigation';
 import { FaRegCircleUser } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 // import Category from './Category';
-
 function Header() {
   return (
   <header >
@@ -28,7 +27,7 @@ function Header() {
     <div className="container  flex items-center justify-between ">
       <div className="col1 w-[25%]">
            {/* here our logo we set it here */}
-            <h1 className='text-2xl  px-7 font-[600] text-[#fa5252]'>GlobleBidChain </h1>
+            <h1 className='text-2xl  px-7 font-[600] text-[#fa5252]'><span className='text-blue-700'>Globle</span><span className='text-red-500'>Bid</span><span className='text-green-500'>Chain</span> </h1>
       </div>
         <div className="col2 w-[40%] ">
             < Search />
@@ -36,7 +35,7 @@ function Header() {
            <div className="col3 w-[25%] flex  items-center justify-between  ">
             <div>
               {/* <Link className='!font-[550] !text-[#fa5252]'>Login</Link> */}
-              <Link to="/login" className='!font-[550] !text-[#fa5252]'>Login</Link>
+              <Button to="/login" className='!font-[550] !text-[#fa5252]'>Login</Button>
 
               <Button className='!text-[#fa5252] !font-[550]'>Register</Button>
             </div>
@@ -51,9 +50,7 @@ function Header() {
     {/* *********************************************************** */}
     {/* navigation start here */}
       <Navigation/>
-     
     </header>
   )
 }
-
 export default Header

@@ -2,25 +2,25 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import { IoCloseSharp } from "react-icons/io5";
-
-// ✅ Correct icons from react-icons
 import { FaTshirt, FaGem, FaClock, FaTv, FaCouch, FaPumpSoap } from "react-icons/fa";
 import { GiSunglasses } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";  // 🟢 Add this
 
 function Category(props) {
   const toggleDrawer = (open) => () => {
     props.openpnal(open);
   };
 
-  // 👇 All categories with proper icons
+  const navigate = useNavigate(); // 🟢 Use this to navigate
+
   const categories = [
-    { name: "Fashion", icon: <FaTshirt className="text-lg mr-3 text-blue-600" /> },
-    { name: "Jewellery", icon: <FaGem className="text-lg mr-3 text-yellow-600" /> },
-    { name: "Watches", icon: <FaClock className="text-lg mr-3 text-gray-600" /> },
-    { name: "Sunglasses", icon: <GiSunglasses className="text-lg mr-3 text-red-500" /> },
-    { name: "Electronic", icon: <FaTv className="text-lg mr-3 text-purple-600" /> },
-    { name: "Cosmetics", icon: <FaPumpSoap className="text-lg mr-3 text-pink-500" /> },
-    { name: "Furniture", icon: <FaCouch className="text-lg mr-3 text-green-600" /> },
+    { name: "Fashion", icon: <FaTshirt className="text-lg mr-3 cursor-pointer" />, path: "/productlisting" },
+    { name: "Jewellery", icon: <FaGem className="text-lg mr-3  cursor-pointer" /> },
+    { name: "Watches", icon: <FaClock className="text-lg mr-3 cursor-pointer" /> },
+    { name: "Sunglasses", icon: <GiSunglasses className="text-lg mr-3  cursor-pointer" /> },
+    { name: "Electronic", icon: <FaTv className="text-lg mr-3  cursor-pointer" /> },
+    { name: "Cosmetics", icon: <FaPumpSoap className="text-lg mr-3 cursor-pointer" /> },
+    { name: "Furniture", icon: <FaCouch className="text-lg mr-3  cursor-pointer" /> },
   ];
 
   const DrawerList = (
@@ -37,7 +37,12 @@ function Category(props) {
           {categories.map((item, index) => (
             <li key={index} className="list-none">
               <button
-                onClick={(e) => e.stopPropagation()}
+                onClick={() => {
+                  if (item.path) {
+                    navigate(item.path); 
+                    toggleDrawer(false)(); 
+                  }
+                }}
                 className="flex items-center w-full p-3 text-left font-medium hover:bg-gray-100 transition-all border-b border-gray-200"
               >
                 {item.icon}

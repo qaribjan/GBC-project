@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button } from '@mui/material';
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { RiArrowDownWideFill } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 import Category from '../../Category';
 
 function Navigation() {
   const [isOpen, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const openPanel = () => setOpen(true);
   const closePanel = () => setOpen(false);
@@ -29,7 +30,10 @@ function Navigation() {
 
           {/* RIGHT – Menu List */}
           <ul className="flex items-center gap-8">
-            <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">
+            <li 
+              onClick={() => navigate('/')}
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200"
+            >
               Home
             </li>
             <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">

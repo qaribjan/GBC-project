@@ -135,19 +135,19 @@ function Slider() {
       </section>
       <section className="py-8 pt-0 bg-white">
         <div className="container">
-          <h2 className="text-[22px] font-bold text-gray-800 mb-2"> Fashion</h2>
+          <h2 className="text-[22px] font-bold text-gray-800 mb-2 cursor-pointer hover:text-gray-400 transition-all"> Fashion</h2>
           <Productslider item={5} />
         </div>
       </section>
       <section className="py-8 pt-0 bg-white">
         <div className="container">
-          <h2 className="text-[22px] font-bold text-gray-800 mb-2">Electronics</h2>
+          <h2 className="text-[22px] font-bold text-gray-800 mb-2  cursor-pointer">Electronics</h2>
           <Productslider item={5} />
         </div>
       </section>
       <section className="py-8 pt-0 bg-white">
         <div className="container">
-          <h2 className="text-[22px] font-bold text-gray-800 mb-2">Furniture</h2>
+          <h2 className="text-[22px] font-bold text-gray-800 mb-2  cursor-pointer">Furniture</h2>
           <Productslider item={5} />
         </div>
       </section>
