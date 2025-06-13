@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -9,9 +10,10 @@ import { IoGrid } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import List from './List';
 
 function Productlisting() {
-  
+  const [itemview, setisitemview] = useState('grid');
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const open = Boolean(anchorEl);
@@ -42,11 +44,17 @@ function Productlisting() {
           </div>
           <div className="rightcontent w-[80%] py-3">
             <div className='bg-[#f1f1f1] p-2 w-full mb-4 rounded-md flex items-center justify-between'>
-              <div className=' col1 flex items-center gap-3'>
-                <Button className='!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-black'>
+              <div className=' col1 flex items-center gap-3 itemviewaction'>
+                <Button className={`!w-[40px] !h-[40px] !min-w-[40px] !rounded-full
+                 !text-black ${itemview === 'list' && 'active'}`}
+                   onClick={()=>{setisitemview('list')}}
+                 >
                   <MdMenu className='text-[rgb(0,0,0,0.7)] !text-[20px]' />
                 </Button>
-                <Button className='!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-black'>
+                <Button assName={`!w-[40px] !h-[40px] !min-w-[40px] !rounded-full
+                 !text-black ${itemview === 'grid' && 'active'}`}
+                 onClick={()=>{setisitemview('grid')}}
+                 >
                   <IoGrid className='!text-[rgb(0,0,0,0.7)]' />
                 </Button>
                 <span className='text-[14px] font-[500] pl-3 text-[rgb(0,0,0,0.7)]'>There are 25 Products.</span>
@@ -84,7 +92,11 @@ function Productlisting() {
               </div>
             </div>
 
-            <div className='grid gird-cols-4 md:grid-cols-4 gap-4'>
+            <div className={`grid ${itemview==='grid' ? 'gird-cols-4 md:grid-cols-4' : 'gird-cols-1 md:grid-cols-1'} gap-4`}>
+              {
+                itemview === 'grid' ? 
+                <>
+                <Productitem />
               <Productitem />
               <Productitem />
               <Productitem />
@@ -92,7 +104,21 @@ function Productlisting() {
               <Productitem />
               <Productitem />
               <Productitem />
-              <Productitem />
+              
+                </>
+                :
+                <>
+                <List/>
+                <List/>
+                <List/>
+                <List/>
+                <List/>
+                <List/>
+                <List/>
+                <List/>
+                </>
+              }
+           
             </div>
 
           </div>

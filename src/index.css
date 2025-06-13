@@ -65,4 +65,9 @@
   .sliderhome .swiper-button-next{
    right: -10px !important;
   }
+ .itemviewaction button.active svg{
+  color:#ff5252 !important;
+  opacity: 1;
+
+ }
  
