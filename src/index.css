@@ -70,4 +70,12 @@
   opacity: 1;
 
  }
- 
+ .MuiPaginationItem-root.Mui-selected{
+  background-color: #ff5252 !important;
+  color: white !important;
+  border-radius: 100%;
+  }
+  .sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+

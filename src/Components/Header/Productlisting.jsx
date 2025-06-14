@@ -11,6 +11,8 @@ import { MdMenu } from "react-icons/md";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import List from './List';
+import Pagination from '@mui/material/Pagination';
+
 
 function Productlisting() {
   const [itemview, setisitemview] = useState('grid');
@@ -111,16 +113,15 @@ function Productlisting() {
                 <List/>
                 <List/>
                 <List/>
-                <List/>
-                <List/>
-                <List/>
-                <List/>
-                <List/>
+                
+                
                 </>
               }
            
             </div>
-
+            <div className='flex items-center justify-center mt-20'>
+              <Pagination count={10} variant="outlined" shape="rounded" />
+              </div>
           </div>
         </div>
       </div>
