@@ -26,7 +26,7 @@ function List() {
           <span className='line-through text-gray-500 text-[14px] font-medium'>$77.00</span>
           <span className='text-red-600 text-[15px] font-semibold'>$60.00</span>
         </div>
-        <Button  className="btn !bg-orange-600 !text-white !mt-3 ">Add to Cart</Button>
+        <Button  className="btn !bg-orange-600 !text-white !mt-3 hover:!bg-gray-700 ">Add to Cart</Button>
       </div>
     </div>
   )
