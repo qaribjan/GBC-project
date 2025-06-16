@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { RiArrowDownWideFill } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Category from '../../Category';
 
 function Navigation() {
@@ -40,7 +40,12 @@ function Navigation() {
               Tender Submitting
             </li>
             <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">
-              Buyer/Seller Central
+           <Link to={"selleradmin"}>   Seller Central
+               </Link>
+         
+            </li>
+            <li className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition duration-200">
+            Buyer Central
             </li>
           </ul>
         </div>
